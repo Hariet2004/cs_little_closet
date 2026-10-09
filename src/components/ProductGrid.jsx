@@ -20,7 +20,8 @@ export default function ProductGrid() {
         </p>
       </div>
 
-      <div className={styles.tabs}>
+      {/* Dark pill filter bar */}
+      <div className={styles.filterBar}>
         {categories.map(cat => (
           <button
             key={cat.key}

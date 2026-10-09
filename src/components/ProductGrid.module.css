@@ -12,7 +12,7 @@
   display: block;
   font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--teal);
   margin-bottom: 8px;
@@ -31,38 +31,53 @@
   font-size: 0.975rem;
 }
 
-.tabs {
+/* ── Dark pill filter bar (stolen from natasha-crochets) ── */
+.filterBar {
+  background: var(--fg);
+  border-radius: 18px;
+  padding: 14px 16px;
   display: flex;
-  gap: 8px;
   flex-wrap: wrap;
-  margin-bottom: 32px;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 36px;
 }
 
 .tab {
-  background: transparent;
-  border: 1.5px solid var(--border);
-  color: var(--fg-muted);
-  font-size: 0.84rem;
+  font-size: 0.82rem;
   font-weight: 600;
   padding: 9px 20px;
   border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.65);
+  background: transparent;
   transition: all 0.18s;
 }
 
-.tab:hover,
+.tab:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
 .tab.on {
   background: var(--accent);
   border-color: var(--accent);
   color: #fff;
 }
 
+/* ── Grid ── */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 600px) {
   .section { padding: 48px 16px; }
   .grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .filterBar { border-radius: 14px; padding: 10px 12px; }
 }
