@@ -1,0 +1,105 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--card);
+  border-bottom: 1.5px solid var(--border);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 62px;
+}
+
+.logo {
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: var(--fg);
+  letter-spacing: -0.01em;
+}
+
+.logo em {
+  color: var(--accent);
+  font-style: normal;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+}
+
+.links a {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--fg-muted);
+  transition: color 0.18s;
+}
+
+.links a:hover { color: var(--accent); }
+
+.cta {
+  background: var(--accent) !important;
+  color: #fff !important;
+  padding: 9px 20px;
+  border-radius: 100px;
+  transition: background 0.18s !important;
+}
+
+.cta:hover { background: var(--accent-dk) !important; }
+
+.burger {
+  display: none;
+  width: 32px;
+  height: 32px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.burger span,
+.burger span::before,
+.burger span::after {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--fg);
+  border-radius: 2px;
+  transition: all 0.22s;
+  position: relative;
+}
+
+.burger span::before,
+.burger span::after {
+  content: '';
+  position: absolute;
+}
+
+.burger span::before { top: -7px; }
+.burger span::after  { top:  7px; }
+
+.burger span.x { background: transparent; }
+.burger span.x::before { transform: rotate(45deg); top: 0; }
+.burger span.x::after  { transform: rotate(-45deg); top: 0; }
+
+@media (max-width: 680px) {
+  .burger { display: flex; }
+
+  .links {
+    display: none;
+    position: absolute;
+    top: 62px;
+    left: 0; right: 0;
+    background: var(--card);
+    border-bottom: 1.5px solid var(--border);
+    flex-direction: column;
+    padding: 20px 24px;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .links.open { display: flex; }
+}

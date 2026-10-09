@@ -1,0 +1,140 @@
+.hero {
+  background: var(--bg-alt);
+  padding: 80px 24px 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.float {
+  position: absolute;
+  font-size: 2.2rem;
+  pointer-events: none;
+  opacity: 0.5;
+  animation: bob 6s ease-in-out infinite;
+}
+
+.float:nth-child(1) { top: 12%; left: 7%;  animation-delay: 0s;   }
+.float:nth-child(2) { top: 16%; right: 8%; animation-delay: 1.8s; }
+.float:nth-child(3) { bottom: 14%; left: 13%; animation-delay: 3.2s; }
+.float:nth-child(4) { bottom: 18%; right: 6%; animation-delay: 4.8s; }
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float { animation: none; }
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--teal-lt);
+  color: var(--teal);
+  font-size: 0.775rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+}
+
+.heading {
+  font-family: var(--font-d);
+  font-size: clamp(2.8rem, 9vw, 5.2rem);
+  font-weight: 900;
+  line-height: 1.07;
+  margin-bottom: 20px;
+  text-wrap: balance;
+}
+
+.pop { color: var(--accent); }
+
+.lead {
+  font-size: 1.05rem;
+  color: var(--fg-muted);
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.btns {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 56px;
+}
+
+.btnFill,
+.btnOutline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-b);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 14px 28px;
+  border-radius: 100px;
+  transition: transform 0.15s, background 0.18s;
+}
+
+.btnFill {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btnFill:hover {
+  background: var(--accent-dk);
+  transform: translateY(-2px);
+}
+
+.btnOutline {
+  background: transparent;
+  color: var(--fg);
+  border: 2px solid var(--border);
+}
+
+.btnOutline:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.pills {
+  display: flex;
+  gap: 36px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pill {
+  text-align: center;
+}
+
+.pill strong {
+  display: block;
+  font-family: var(--font-d);
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: var(--accent);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.pill span {
+  font-size: 0.72rem;
+  color: var(--fg-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

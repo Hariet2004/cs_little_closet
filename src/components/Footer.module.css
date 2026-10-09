@@ -1,0 +1,25 @@
+.footer {
+  border-top: 1.5px solid var(--border);
+  padding: 28px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8rem;
+  color: var(--fg-muted);
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.ig {
+  font-weight: 600;
+  color: var(--accent);
+  transition: opacity 0.18s;
+}
+
+.ig:hover { opacity: 0.75; }
+
+@media (max-width: 480px) {
+  .footer { justify-content: center; text-align: center; padding: 24px 16px; }
+}
