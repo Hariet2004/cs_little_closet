@@ -1,27 +1,29 @@
 .ticker {
-  background: var(--accent);
+  background: var(--fg);
   overflow: hidden;
   white-space: nowrap;
-  padding: 9px 0;
+  padding: 10px 0;
 }
 
 .track {
   display: inline-flex;
-  animation: marquee 28s linear infinite;
+  animation: marquee 32s linear infinite;
 }
 
 .item {
-  font-size: 0.72rem;
+  font-family: var(--font-b);
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #fff;
+  color: rgba(255,255,255,0.85);
   padding: 0 20px;
 }
 
 .dot {
-  opacity: 0.5;
+  color: var(--accent);
   margin-left: 20px;
+  opacity: 1;
 }
 
 @keyframes marquee {

@@ -2,7 +2,6 @@
   display: block;
   text-decoration: none;
   color: var(--fg);
-  group: card;
 }
 
 /* ── Image ── */
@@ -12,49 +11,42 @@
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--bg-alt);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .img {
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   object-fit: cover;
-  transform: scale(1.04);
+  transform: scale(1.03);
   transition: transform 0.5s ease;
 }
 
-.card:hover .img {
-  transform: scale(1.1);
-}
+.card:hover .img { transform: scale(1.09); }
 
 /* dark overlay */
 .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(30, 19, 9, 0);
-  transition: background 0.35s ease;
+  position: absolute; inset: 0;
+  background: rgba(35, 26, 16, 0);
+  transition: background 0.3s ease;
 }
 
-.card:hover .overlay {
-  background: rgba(30, 19, 9, 0.38);
-}
+.card:hover .overlay { background: rgba(35, 26, 16, 0.35); }
 
-/* slide-up buy button */
+/* slide-up CTA */
 .cta {
   position: absolute;
-  bottom: 16px;
-  left: 50%;
-  transform: translateX(-50%) translateY(12px);
+  bottom: 14px; left: 50%;
+  transform: translateX(-50%) translateY(10px);
   opacity: 0;
-  background: #fff;
+  background: var(--card);
   color: var(--fg);
   font-family: var(--font-b);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  padding: 10px 20px;
+  padding: 10px 22px;
   border-radius: 100px;
   white-space: nowrap;
-  transition: opacity 0.28s ease, transform 0.28s ease;
+  transition: opacity 0.25s, transform 0.25s;
   pointer-events: none;
 }
 
@@ -63,31 +55,66 @@
   transform: translateX(-50%) translateY(0);
 }
 
-/* category badge */
+/* ── Price tag shape (the thrift store element) ── */
+.priceTag {
+  position: absolute;
+  top: 14px; right: -2px;
+  background: var(--yellow);
+  color: var(--fg);
+  font-family: var(--font-b);
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 5px 10px 5px 12px;
+  /* arrow/tag shape pointing left */
+  clip-path: polygon(10px 0%, 100% 0%, 100% 100%, 10px 100%, 0% 50%);
+  line-height: 1.2;
+  min-width: 64px;
+  text-align: right;
+}
+
+.priceTag sup {
+  font-size: 0.58rem;
+  vertical-align: super;
+  margin-right: 1px;
+  font-weight: 700;
+}
+
+.priceTagDm {
+  position: absolute;
+  top: 14px; right: -2px;
+  background: var(--teal-lt);
+  color: var(--teal);
+  font-family: var(--font-b);
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 5px 10px 5px 12px;
+  clip-path: polygon(10px 0%, 100% 0%, 100% 100%, 10px 100%, 0% 50%);
+  letter-spacing: 0.04em;
+}
+
+/* badge (New In etc) */
 .badge {
   position: absolute;
-  top: 12px;
-  left: 12px;
+  top: 14px; left: 12px;
   background: var(--accent);
   color: #fff;
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 800;
   padding: 4px 10px;
   border-radius: 100px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
-/* ── Info ── */
-.body {
-  padding: 0 2px;
-}
+/* ── Info below ── */
+.body { padding: 0 2px; }
 
 .name {
   font-family: var(--font-d);
-  font-size: 0.95rem;
-  font-weight: 800;
+  font-size: 1rem;
+  font-weight: 700;
   margin-bottom: 2px;
+  line-height: 1.25;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -95,28 +122,6 @@
 
 .size {
   font-size: 0.76rem;
-  color: var(--fg-muted);
-  margin-bottom: 6px;
-}
-
-.price {
-  font-family: var(--font-d);
-  font-size: 1.1rem;
-  font-weight: 900;
-  color: var(--accent);
-  font-variant-numeric: tabular-nums;
-}
-
-.price sup {
-  font-size: 0.65rem;
-  font-weight: 700;
-  vertical-align: super;
-  margin-right: 1px;
-}
-
-.dm {
-  font-family: var(--font-b);
-  font-size: 0.78rem;
   color: var(--fg-muted);
   font-weight: 500;
 }

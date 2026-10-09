@@ -9,46 +9,44 @@ export default function Hero() {
     <section className={styles.hero}>
       <div className={styles.inner}>
 
-        {/* ── Text side ── */}
+        {/* ── Text ── */}
         <div className={styles.text}>
-          <div className={styles.badge}>🧸 Nairobi's Favourite Kids' Thrift</div>
+          <div className={styles.label}>Nairobi · Kids Thrift Store</div>
 
-          <h1 className={styles.heading}>
-            Little outfits,<br />
-            <em className={styles.pop}>big cuteness.</em>
-          </h1>
+          <h1 className={styles.heading}>Little outfits,</h1>
+          <span className={styles.headingSub}>big cuteness.</span>
 
           <p className={styles.lead}>
-            Affordable, quality thrifted clothing for babies and kids.
-            Curated with love — priced for every parent.
+            Hand-picked thrifted clothing for babies and kids in Nairobi.
+            Every piece quality-checked. Every price made for real parents.
           </p>
 
           <div className={styles.btns}>
-            <a href="#shop" className={styles.btnFill}>Browse the Closet</a>
+            <a href="#shop" className={styles.btnFill}>Browse Finds →</a>
             <a href={IG} target="_blank" rel="noopener noreferrer" className={styles.btnOutline}>
-              Instagram ↗
+              DM on Instagram
             </a>
           </div>
 
           <div className={styles.trust}>
             <div className={styles.stat}>
               <strong>38+</strong>
-              <span>Items Listed</span>
+              <span>Pieces Listed</span>
             </div>
             <div className={styles.divider} />
             <div className={styles.stat}>
               <strong>KSh 200</strong>
-              <span>Starting From</span>
+              <span>Lowest Price</span>
             </div>
             <div className={styles.divider} />
             <div className={styles.stat}>
-              <strong>100%</strong>
-              <span>Quality Checked</span>
+              <strong>One-off</strong>
+              <span>Each Item Unique</span>
             </div>
           </div>
         </div>
 
-        {/* ── Image mosaic ── */}
+        {/* ── Mosaic ── */}
         <div className={styles.mosaic}>
           <div className={styles.col}>
             {mosaicLeft.map((src, i) => (

@@ -1,46 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
 
+/* ── Kraft-paper thrift store palette ── */
 :root {
-  --bg:         #FEF7EE;
-  --bg-alt:     #FFF1E0;
-  --fg:         #1E1309;
-  --fg-muted:   #7A5C3F;
-  --accent:     #F07B54;
-  --accent-lt:  #FDDFD4;
-  --accent-dk:  #C4552A;
-  --teal:       #52B8B0;
-  --teal-lt:    #D4F1EE;
-  --card:       #FFFFFF;
-  --border:     #EDD9C8;
-  --font-d:     'Nunito', system-ui, sans-serif;
-  --font-b:     'DM Sans', system-ui, sans-serif;
-  --radius-sm:  12px;
-  --radius-md:  20px;
-  --radius-lg:  32px;
+  --bg:        #F6F0E8;
+  --bg-alt:    #EDE4D8;
+  --fg:        #231A10;
+  --fg-muted:  #7A6048;
+  --accent:    #D94F3A;
+  --accent-lt: #FCEAE8;
+  --accent-dk: #A83828;
+  --teal:      #3D8C82;
+  --teal-lt:   #DAF0ED;
+  --yellow:    #F2C94C;
+  --card:      #FFFEF8;
+  --border:    #D8CCBC;
+  --font-d:    'Fraunces', Georgia, serif;
+  --font-b:    'DM Sans', system-ui, sans-serif;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg:        #180E06;
-    --bg-alt:    #231308;
-    --fg:        #F5EBE0;
-    --fg-muted:  #B09070;
-    --accent:    #F08B68;
-    --accent-lt: #3A1A0A;
-    --accent-dk: #F5A882;
-    --teal:      #5BBDB4;
+    --bg:        #1A1108;
+    --bg-alt:    #231808;
+    --fg:        #F0E8DC;
+    --fg-muted:  #A8906C;
+    --accent:    #E06050;
+    --accent-lt: #3A1810;
+    --accent-dk: #F08070;
+    --teal:      #4AADA3;
     --teal-lt:   #0C2826;
-    --card:      #241408;
-    --border:    #3D2412;
+    --yellow:    #F2C94C;
+    --card:      #231808;
+    --border:    #3A2A18;
   }
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
 body {
@@ -53,12 +51,5 @@ body {
 }
 
 img { max-width: 100%; display: block; }
-
-a { color: inherit; text-decoration: none; }
-
-button {
-  font-family: var(--font-b);
-  cursor: pointer;
-  border: none;
-  background: none;
-}
+a   { color: inherit; text-decoration: none; }
+button { font-family: var(--font-b); cursor: pointer; border: none; background: none; }
