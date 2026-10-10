@@ -33,9 +33,10 @@
 
 /* ── Dark pill filter bar (stolen from natasha-crochets) ── */
 .filterBar {
-  background: var(--fg);
+  background: var(--bg-alt);
+  border: 2px solid var(--border);
   border-radius: 18px;
-  padding: 14px 16px;
+  padding: 12px 16px;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -45,18 +46,18 @@
 
 .tab {
   font-size: 0.82rem;
-  font-weight: 600;
+  font-weight: 700;
   padding: 9px 20px;
   border-radius: 100px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: rgba(255, 255, 255, 0.65);
-  background: transparent;
+  border: 2px solid var(--border);
+  color: var(--fg-muted);
+  background: var(--card);
   transition: all 0.18s;
 }
 
 .tab:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .tab.on {
@@ -65,15 +66,60 @@
   color: #fff;
 }
 
+/* ── Sort / count toolbar (mybigorder idea) ── */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.count {
+  font-size: 0.82rem;
+  color: var(--fg-muted);
+  font-weight: 500;
+}
+
+.sortWrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sortLabel {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--fg-muted);
+}
+
+.sortSelect {
+  font-family: var(--font-b);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--fg);
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.18s;
+}
+
+.sortSelect:focus { border-color: var(--accent); }
+
 /* ── Grid ── */
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  align-items: stretch;
 }
 
-@media (max-width: 900px) {
-  .grid { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 860px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 600px) {

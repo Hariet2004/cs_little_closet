@@ -1,8 +1,8 @@
 import styles from './Hero.module.css'
 
 const IG = 'https://www.instagram.com/cs_little_closet/'
-const mosaicLeft  = ['/images/item4.jpg', '/images/item8.jpg', '/images/item12.jpg']
-const mosaicRight = ['/images/item5.jpg', '/images/item11.jpg', '/images/item9.jpg']
+const mosaicLeft  = ['/images/item17.jpg', '/images/item26.jpg', '/images/item29.jpg']
+const mosaicRight = ['/images/item14.jpg', '/images/item28.jpg', '/images/item31.jpg']
 
 export default function Hero() {
   return (
@@ -46,22 +46,23 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── Mosaic ── */}
+        {/* ── Mosaic — 2×3 equal grid ── */}
         <div className={styles.mosaic}>
-          <div className={styles.col}>
-            {mosaicLeft.map((src, i) => (
-              <div key={i} className={`${styles.tile} ${i === 1 ? styles.square : styles.portrait}`}>
+          {[...mosaicLeft, ...mosaicRight]
+            .reduce((rows, src, i) => {
+              const col = i < 3 ? 0 : 1
+              const row = i % 3
+              if (!rows[row]) rows[row] = []
+              rows[row][col] = src
+              return rows
+            }, [])
+            .flat()
+            .map((src, i) => (
+              <div key={i} className={styles.tile}>
                 <img src={src} alt="" />
               </div>
-            ))}
-          </div>
-          <div className={`${styles.col} ${styles.colOffset}`}>
-            {mosaicRight.map((src, i) => (
-              <div key={i} className={`${styles.tile} ${i === 0 ? styles.square : styles.portrait}`}>
-                <img src={src} alt="" />
-              </div>
-            ))}
-          </div>
+            ))
+          }
         </div>
 
       </div>

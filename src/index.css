@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
 
-/* ── Kraft-paper thrift store palette ── */
+/* ── Bright kids thrift palette ── */
 :root {
-  --bg:        #F6F0E8;
-  --bg-alt:    #EDE4D8;
-  --fg:        #231A10;
-  --fg-muted:  #7A6048;
-  --accent:    #D94F3A;
-  --accent-lt: #FCEAE8;
-  --accent-dk: #A83828;
-  --teal:      #3D8C82;
-  --teal-lt:   #DAF0ED;
-  --yellow:    #F2C94C;
-  --card:      #FFFEF8;
-  --border:    #D8CCBC;
+  --bg:        #FFFFFF;
+  --bg-alt:    #FFF8F2;
+  --fg:        #1A0A2E;
+  --fg-muted:  #7B6890;
+  --accent:    #FF3CAC;
+  --accent-lt: #FFF0FA;
+  --accent-dk: #CC1A89;
+  --teal:      #00C4B4;
+  --teal-lt:   #E6FFFD;
+  --yellow:    #FFD600;
+  --card:      #FFFFFF;
+  --border:    #F0E8FF;
   --font-d:    'Fraunces', Georgia, serif;
   --font-b:    'DM Sans', system-ui, sans-serif;
   --radius-sm: 10px;
@@ -21,20 +21,21 @@
   --radius-lg: 28px;
 }
 
+/* Force light mode always — this is a bright kids store */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg:        #1A1108;
-    --bg-alt:    #231808;
-    --fg:        #F0E8DC;
-    --fg-muted:  #A8906C;
-    --accent:    #E06050;
-    --accent-lt: #3A1810;
-    --accent-dk: #F08070;
-    --teal:      #4AADA3;
-    --teal-lt:   #0C2826;
-    --yellow:    #F2C94C;
-    --card:      #231808;
-    --border:    #3A2A18;
+    --bg:        #FFFFFF;
+    --bg-alt:    #FFF8F2;
+    --fg:        #1A0A2E;
+    --fg-muted:  #7B6890;
+    --accent:    #FF3CAC;
+    --accent-lt: #FFF0FA;
+    --accent-dk: #CC1A89;
+    --teal:      #00C4B4;
+    --teal-lt:   #E6FFFD;
+    --yellow:    #FFD600;
+    --card:      #FFFFFF;
+    --border:    #F0E8FF;
   }
 }
 

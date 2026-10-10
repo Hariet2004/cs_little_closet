@@ -1,11 +1,11 @@
 .hero {
-  background: var(--bg-alt);
+  background: #FFFFFF;
   padding: 80px 28px 88px;
   overflow: hidden;
-  /* subtle paper texture via gradient */
   background-image:
-    radial-gradient(ellipse at 10% 80%, var(--teal-lt) 0%, transparent 50%),
-    radial-gradient(ellipse at 90% 20%, var(--accent-lt) 0%, transparent 45%);
+    radial-gradient(ellipse at 5%  90%, #FFE0F5 0%, transparent 42%),
+    radial-gradient(ellipse at 95% 10%, #D4F9F4 0%, transparent 42%),
+    radial-gradient(ellipse at 60% 95%, #FFF4B2 0%, transparent 38%);
 }
 
 .inner {
@@ -135,22 +135,25 @@
 
 /* ── Mosaic ── */
 .mosaic {
-  display: flex;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
   animation: fadeUp 0.75s 0.18s ease both;
 }
 
-.col { flex: 1; display: flex; flex-direction: column; gap: 12px; }
-.colOffset { margin-top: 48px; }
+.col { display: contents; }
+.colOffset { display: contents; }
 
 .tile {
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--border);
   position: relative;
+  aspect-ratio: 1 / 1;
 }
 
-.portrait { aspect-ratio: 3 / 4; }
+.portrait { aspect-ratio: 1 / 1; }
 .square   { aspect-ratio: 1 / 1; }
 
 .tile img {

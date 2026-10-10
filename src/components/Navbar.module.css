@@ -43,15 +43,15 @@
 .links a:hover { color: var(--accent); }
 
 .cta {
-  background: var(--fg) !important;
-  color: var(--bg) !important;
+  background: var(--accent) !important;
+  color: #fff !important;
   padding: 9px 22px;
   border-radius: 100px;
   font-weight: 700 !important;
   transition: background 0.18s !important;
 }
 
-.cta:hover { background: var(--accent) !important; color: #fff !important; }
+.cta:hover { background: var(--accent-dk) !important; color: #fff !important; }
 
 /* hamburger */
 .burger {

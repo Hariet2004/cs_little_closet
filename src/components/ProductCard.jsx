@@ -1,33 +1,87 @@
 import styles from './ProductCard.module.css'
+import { WA_NUMBER } from '../data/products'
 
 const IG = 'https://www.instagram.com/cs_little_closet/'
 
+function waLink(name, size, price) {
+  const priceStr = price ? `KSh ${price.toLocaleString()}` : 'price TBD'
+  const text = `Hi CS Little Closet! 👋 I'm interested in:\n*${name}* (Size: ${size}) – ${priceStr}\nIs it still available?`
+  return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`
+}
+
+function discount(original, sale) {
+  if (!original || !sale) return null
+  return Math.round((1 - sale / original) * 100)
+}
+
 export default function ProductCard({ product }) {
-  const { name, size, price, image, badge } = product
+  const { name, size, price, originalPrice, image, badge, sold } = product
+  const pct = discount(originalPrice, price)
+
+  function handleWa(e) {
+    e.preventDefault()
+    e.stopPropagation()
+    window.open(waLink(name, size, price), '_blank', 'noopener,noreferrer')
+  }
 
   return (
-    <a href={IG} target="_blank" rel="noopener noreferrer" className={styles.card}>
-      <div className={styles.imgWrap}>
-        <img src={image} alt={name} className={styles.img} />
-        <div className={styles.overlay} />
-        <div className={styles.cta}>DM to Reserve 📩</div>
+    <div className={`${styles.card} ${sold ? styles.isSold : ''}`}>
+      <a href={IG} target="_blank" rel="noopener noreferrer" className={styles.imgLink}>
+        <div className={styles.imgWrap}>
+          <img src={image} alt={name} className={styles.img} />
+          <div className={styles.overlay} />
 
-        {/* Arrow price tag on the right edge */}
-        {price !== null ? (
-          <div className={styles.priceTag}>
-            <sup>KSh</sup>{price.toLocaleString()}
-          </div>
-        ) : (
-          <div className={styles.priceTagDm}>DM for price</div>
-        )}
+          {/* SOLD stamp */}
+          {sold && <div className={styles.soldStamp}>SOLD</div>}
 
-        {badge && <span className={styles.badge}>{badge}</span>}
-      </div>
+          {/* Arrow price tag */}
+          {!sold && price !== null ? (
+            <div className={styles.priceTag}>
+              <sup>KSh</sup>{price.toLocaleString()}
+            </div>
+          ) : !sold ? (
+            <div className={styles.priceTagDm}>DM for price</div>
+          ) : null}
+
+          {/* Discount % badge */}
+          {!sold && pct && pct >= 10 && (
+            <div className={styles.discountBadge}>-{pct}%</div>
+          )}
+
+          {/* New In / Deal badge */}
+          {badge && <span className={styles.badge} data-badge={badge}>{badge}</span>}
+        </div>
+      </a>
 
       <div className={styles.body}>
         <h3 className={styles.name}>{name}</h3>
+
+        <div className={styles.priceRow}>
+          {price !== null ? (
+            <>
+              <span className={styles.salePrice}>KSh {price.toLocaleString()}</span>
+              {originalPrice && <span className={styles.origPrice}>KSh {originalPrice.toLocaleString()}</span>}
+            </>
+          ) : (
+            <span className={styles.dmPrice}>DM for price</span>
+          )}
+        </div>
+
         <p className={styles.size}>Size · {size}</p>
+
+        {/* WhatsApp CTA (masha thrift idea) */}
+        {!sold ? (
+          <button className={styles.waBtn} onClick={handleWa} aria-label={`Order ${name} via WhatsApp`}>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.531 5.855L.057 23.215a.75.75 0 0 0 .921.921l5.36-1.474A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.707 9.707 0 0 1-4.964-1.362l-.357-.213-3.705 1.019 1.019-3.705-.213-.357A9.707 9.707 0 0 1 2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75z"/>
+            </svg>
+            Buy via WhatsApp
+          </button>
+        ) : (
+          <div className={styles.soldLabel}>Item Sold</div>
+        )}
       </div>
-    </a>
+    </div>
   )
 }
