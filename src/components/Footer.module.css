@@ -1,85 +1,77 @@
 .footer {
   background: var(--fg);
-  color: var(--bg);
+  padding: 20px 24px;
 }
 
 .inner {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 64px 24px 48px;
   display: flex;
-  gap: 64px;
+  align-items: center;
   justify-content: space-between;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
-.brand { max-width: 320px; }
+.brand { display: flex; flex-direction: column; gap: 2px; }
 
 .logo {
-  display: block;
   font-family: var(--font-d);
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: 900;
-  color: var(--bg);
-  margin-bottom: 12px;
+  color: #fff;
 }
 
-.logo em {
-  color: var(--accent);
-  font-style: italic;
-}
+.logo em { color: var(--accent); font-style: italic; }
 
 .tagline {
-  font-size: 0.88rem;
-  color: var(--bg);
-  opacity: 0.55;
-  line-height: 1.65;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.35);
 }
 
-.cols {
+.links {
   display: flex;
-  gap: 48px;
+  gap: 20px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
-.col {
+.links a {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.45);
+  font-weight: 500;
+  transition: color 0.18s;
+}
+
+.links a:hover { color: #fff; }
+
+.right {
+  text-align: right;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 2px;
 }
 
-.colHead {
-  font-family: var(--font-b);
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--bg);
-  opacity: 0.4;
-  margin-bottom: 4px;
+.copy {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.25);
+  white-space: nowrap;
 }
 
-.col a {
-  font-size: 0.88rem;
-  font-weight: 500;
-  color: var(--bg);
-  opacity: 0.75;
+.built {
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.25);
+}
+
+.built a {
+  color: var(--accent);
+  font-weight: 600;
   transition: opacity 0.18s;
 }
 
-.col a:hover { opacity: 1; }
+.built a:hover { opacity: 0.75; }
 
-.bottom {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 20px 24px;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  font-size: 0.75rem;
-  color: var(--bg);
-  opacity: 0.45;
-}
-
-@media (max-width: 680px) {
-  .inner { padding: 48px 16px 36px; gap: 40px; }
-  .bottom { padding: 16px; text-align: center; }
+@media (max-width: 640px) {
+  .inner { flex-direction: column; text-align: center; gap: 12px; }
+  .links { gap: 14px; }
 }

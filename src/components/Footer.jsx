@@ -1,6 +1,7 @@
 import styles from './Footer.module.css'
 
 const IG = 'https://www.instagram.com/cs_little_closet/'
+const WA = 'https://wa.me/254796868984'
 
 export default function Footer() {
   return (
@@ -8,27 +9,21 @@ export default function Footer() {
       <div className={styles.inner}>
         <div className={styles.brand}>
           <span className={styles.logo}><em>CS</em> Little Closet</span>
-          <p className={styles.tagline}>Handpicked thrifted clothing for babies and kids in Nairobi.</p>
+          <p className={styles.tagline}>Kids Thrift. Nairobi.</p>
         </div>
 
-        <div className={styles.cols}>
-          <div className={styles.col}>
-            <h4 className={styles.colHead}>Quick Links</h4>
-            <a href="#shop">Shop</a>
-            <a href="#how">How to Order</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-          </div>
-          <div className={styles.col}>
-            <h4 className={styles.colHead}>Follow Us</h4>
-            <a href={IG} target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="https://wa.me/254796868984" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-          </div>
-        </div>
-      </div>
+        <nav className={styles.links}>
+          <a href="#shop">Shop</a>
+          <a href="#how">How It Works</a>
+          <a href="#about">About</a>
+          <a href={IG} target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href={WA} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        </nav>
 
-      <div className={styles.bottom}>
-        © {new Date().getFullYear()} CS Little Closet · Nairobi, Kenya · Made with 🩷 for little ones
+        <div className={styles.right}>
+          <p className={styles.copy}>© {new Date().getFullYear()} CS Little Closet</p>
+          <p className={styles.built}>Built by <a href="https://hariet-wambui-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer">HK Web Studios</a></p>
+        </div>
       </div>
     </footer>
   )
