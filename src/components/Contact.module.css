@@ -1,88 +1,106 @@
 .section {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 0 24px 72px;
+  padding: 72px 24px;
+  text-align: center;
 }
 
-.box {
-  background: var(--fg);
-  border-radius: var(--radius-lg);
-  padding: 64px 48px;
-  text-align: center;
+.eyebrow {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
 }
 
 .title {
   font-family: var(--font-d);
-  font-size: clamp(2rem, 6vw, 3.2rem);
+  font-size: clamp(1.8rem, 5vw, 3rem);
   font-weight: 900;
-  color: var(--bg);
-  margin-bottom: 12px;
+  color: var(--fg);
+  margin-bottom: 10px;
 }
 
 .sub {
-  color: var(--bg);
-  opacity: 0.65;
-  font-size: 1.05rem;
-  margin-bottom: 44px;
+  color: var(--fg-muted);
+  font-size: 1rem;
+  margin-bottom: 48px;
 }
 
 .channels {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
+/* Natasha-style tappable card */
 .card {
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.13);
-  border-radius: var(--radius-md);
-  padding: 28px 32px;
-  min-width: 195px;
-  text-align: left;
-  color: var(--bg);
+  background: var(--bg-alt);
+  border: 2px solid var(--border);
+  border-radius: 24px;
+  padding: 28px 24px;
+  min-width: 170px;
+  text-align: center;
+  color: var(--fg);
   text-decoration: none;
-  transition: background 0.18s, transform 0.15s;
   display: block;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+  cursor: pointer;
 }
 
 .card:hover {
-  background: rgba(255, 255, 255, 0.13);
+  border-color: var(--accent);
+  box-shadow: 0 8px 24px rgba(255,60,172,0.12);
   transform: translateY(-3px);
 }
 
-.icon {
-  font-size: 1.9rem;
-  display: block;
-  margin-bottom: 12px;
+/* Colored icon circle */
+.iconWrap {
+  width: 48px;
+  height: 48px;
+  background: var(--accent-lt);
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+  font-size: 1.4rem;
+  transition: background 0.2s;
 }
+
+.card:hover .iconWrap { background: var(--accent); }
+.card:hover .iconWrap .iconEmoji { filter: brightness(10); }
+
+.iconEmoji { display: block; line-height: 1; }
 
 .chTitle {
   font-family: var(--font-d);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 800;
-  color: var(--bg);
+  color: var(--fg);
   margin-bottom: 4px;
 }
 
 .chDesc {
-  font-size: 0.78rem;
-  opacity: 0.6;
-  color: var(--bg);
-  margin-bottom: 10px;
+  font-size: 0.75rem;
+  color: var(--fg-muted);
+  margin-bottom: 8px;
   line-height: 1.5;
 }
 
 .handle {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: var(--accent);
   display: block;
+  word-break: break-all;
 }
 
 @media (max-width: 680px) {
-  .section { padding: 0 16px 56px; }
-  .box { padding: 40px 24px; border-radius: 24px; }
-  .channels { flex-direction: column; align-items: stretch; }
-  .card { min-width: unset; }
+  .section { padding: 48px 16px; }
+  .channels { gap: 10px; }
+  .card { min-width: 140px; padding: 20px 16px; }
 }

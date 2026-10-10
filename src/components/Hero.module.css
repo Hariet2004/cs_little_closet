@@ -91,10 +91,10 @@
 }
 
 .btnFill {
-  background: var(--fg);
-  color: var(--bg);
+  background: var(--accent);
+  color: #fff;
 }
-.btnFill:hover  { background: var(--accent); transform: translateY(-2px); }
+.btnFill:hover  { background: var(--accent-dk); transform: translateY(-2px); }
 
 .btnOutline {
   background: transparent;
@@ -133,27 +133,31 @@
 
 .divider { width: 1px; height: 36px; background: var(--border); }
 
-/* ── Mosaic ── */
+/* ── Staggered image grid (Natasha layout) ── */
 .mosaic {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(3, 1fr);
-  gap: 10px;
+  gap: 12px;
   animation: fadeUp 0.75s 0.18s ease both;
 }
 
-.col { display: contents; }
-.colOffset { display: contents; }
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Right column offset downward like Natasha */
+.colOffset { margin-top: 32px; }
 
 .tile {
-  border-radius: var(--radius-md);
+  border-radius: 20px;
   overflow: hidden;
   background: var(--border);
   position: relative;
-  aspect-ratio: 1 / 1;
 }
 
-.portrait { aspect-ratio: 1 / 1; }
+.portrait { aspect-ratio: 3 / 4; }
 .square   { aspect-ratio: 1 / 1; }
 
 .tile img {

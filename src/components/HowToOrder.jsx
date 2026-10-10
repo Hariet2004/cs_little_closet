@@ -1,29 +1,23 @@
 import styles from './HowToOrder.module.css'
 
 const steps = [
-  { num: '01', icon: '👀', title: 'Browse Items',       desc: 'Scroll through our shop or check our Instagram for the latest drops.', color: 'warm' },
-  { num: '02', icon: '📩', title: 'DM to Reserve',      desc: 'Send a direct message on Instagram with the item name and size.',        color: 'teal' },
-  { num: '03', icon: '💸', title: 'Pay via M-Pesa',     desc: "We'll share our M-Pesa details. Your order is confirmed once payment clears.", color: 'warm' },
-  { num: '04', icon: '🚚', title: 'Pickup or Delivery', desc: 'Collect in Nairobi or we arrange delivery for a small fee.',            color: 'teal' },
+  { num: '01', title: 'Browse & Pick',   desc: 'Scroll our shop or check Instagram @cs_little_closet for the latest drops. Find something you love?' },
+  { num: '02', title: 'DM or WhatsApp',  desc: 'Send us a message with the item name and size. We reply fast and reserve it for you.' },
+  { num: '03', title: 'Pay & Receive',   desc: 'Pay via M-Pesa once confirmed. Collect in Nairobi or we arrange delivery for a small fee.' },
 ]
 
 export default function HowToOrder() {
   return (
     <section className={styles.section} id="how">
-      <div className={styles.box}>
-        <span className={styles.eyebrow}>Ordering</span>
-        <h2 className={styles.title}>How to get your order</h2>
+      <div className={styles.inner}>
+        <span className={styles.eyebrow}>How It Works</span>
+        <h2 className={styles.title}>Ordering is easy</h2>
         <p className={styles.sub}>Shopping with us takes just a few messages.</p>
 
         <div className={styles.steps}>
           {steps.map(step => (
             <div key={step.num} className={styles.step}>
-              {/* Giant decorative number */}
-              <div className={styles.numDecor}>{step.num}</div>
-
-              <div className={`${styles.icon} ${styles[step.color]}`}>
-                {step.icon}
-              </div>
+              <div className={styles.num}>{step.num}</div>
               <h3 className={styles.stepTitle}>{step.title}</h3>
               <p className={styles.stepDesc}>{step.desc}</p>
             </div>

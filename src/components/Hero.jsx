@@ -1,8 +1,9 @@
 import styles from './Hero.module.css'
 
 const IG = 'https://www.instagram.com/cs_little_closet/'
-const mosaicLeft  = ['/images/item17.jpg', '/images/item26.jpg', '/images/item29.jpg']
-const mosaicRight = ['/images/item14.jpg', '/images/item28.jpg', '/images/item31.jpg']
+// left col: portrait then square | right col: square then portrait (Natasha stagger)
+const heroLeft  = ['/images/item17.jpg', '/images/item29.jpg']
+const heroRight = ['/images/item14.jpg', '/images/item31.jpg']
 
 export default function Hero() {
   return (
@@ -17,8 +18,8 @@ export default function Hero() {
           <span className={styles.headingSub}>big cuteness.</span>
 
           <p className={styles.lead}>
-            Hand-picked thrifted clothing for babies and kids in Nairobi.
-            Every piece quality-checked. Every price made for real parents.
+            Handpicked thrifted clothing for babies and kids in Nairobi.
+            Every piece is quality checked. Every price made for real parents.
           </p>
 
           <div className={styles.btns}>
@@ -40,29 +41,30 @@ export default function Hero() {
             </div>
             <div className={styles.divider} />
             <div className={styles.stat}>
-              <strong>One-off</strong>
-              <span>Each Item Unique</span>
+              <strong>Unique</strong>
+              <span>Each Item One of a Kind</span>
             </div>
           </div>
         </div>
 
-        {/* ── Mosaic — 2×3 equal grid ── */}
+        {/* ── Staggered image grid (Natasha layout) ── */}
         <div className={styles.mosaic}>
-          {[...mosaicLeft, ...mosaicRight]
-            .reduce((rows, src, i) => {
-              const col = i < 3 ? 0 : 1
-              const row = i % 3
-              if (!rows[row]) rows[row] = []
-              rows[row][col] = src
-              return rows
-            }, [])
-            .flat()
-            .map((src, i) => (
-              <div key={i} className={styles.tile}>
-                <img src={src} alt="" />
-              </div>
-            ))
-          }
+          <div className={styles.col}>
+            <div className={`${styles.tile} ${styles.portrait}`}>
+              <img src={heroLeft[0]} alt="" />
+            </div>
+            <div className={`${styles.tile} ${styles.square}`}>
+              <img src={heroLeft[1]} alt="" />
+            </div>
+          </div>
+          <div className={`${styles.col} ${styles.colOffset}`}>
+            <div className={`${styles.tile} ${styles.square}`}>
+              <img src={heroRight[0]} alt="" />
+            </div>
+            <div className={`${styles.tile} ${styles.portrait}`}>
+              <img src={heroRight[1]} alt="" />
+            </div>
+          </div>
         </div>
 
       </div>

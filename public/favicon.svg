@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="22" fill="#FF3CAC"/>
+  <!-- dress shape -->
+  <path d="M35 28 L28 42 L38 42 L32 75 L68 75 L62 42 L72 42 L65 28 Q58 34 50 34 Q42 34 35 28Z" fill="white"/>
+</svg>

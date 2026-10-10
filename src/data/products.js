@@ -1,19 +1,19 @@
 // WhatsApp number — replace with the real one
-export const WA_NUMBER = '254700000000'
+export const WA_NUMBER = '254796868984'
 
 export const products = [
-  { id: 1,  name: 'Kids Shorts',      size: 'Ask us',   price: null, originalPrice: null, image: '/images/item1.jpg',  category: 'shorts',  badge: 'New In',  sold: false, addedAt: 12 },
-  { id: 2,  name: 'Kids Outfit',      size: 'Ask us',   price: null, originalPrice: null, image: '/images/item2.jpg',  category: 'sets',    badge: 'New In',  sold: false, addedAt: 11 },
+  { id: 1,  name: 'Kids Skirt',       size: 'Ask us',   price: null, originalPrice: null, image: '/images/item1.jpg',  category: 'skirts',  badge: 'New In',  sold: false, addedAt: 12 },
+  { id: 2,  name: 'Kids Skirt',       size: 'Ask us',   price: null, originalPrice: null, image: '/images/item2.jpg',  category: 'skirts',  badge: 'New In',  sold: false, addedAt: 11 },
   { id: 3,  name: 'Kids Shorts',      size: 'Ask us',   price: null, originalPrice: null, image: '/images/item3.jpg',  category: 'shorts',  badge: 'New In',  sold: false, addedAt: 10 },
-  { id: 4,  name: "Boy's Outfit",     size: '5 years',  price: 450,  originalPrice: 900,  image: '/images/item4.jpg',  category: 'sets',    badge: null,      sold: false, addedAt: 9  },
-  { id: 5,  name: 'Kids Skirt',       size: '5 years',  price: 200,  originalPrice: 500,  image: '/images/item5.jpg',  category: 'skirts',  badge: null,      sold: false, addedAt: 8  },
-  { id: 6,  name: 'Shorts',           size: '7–8 yrs',  price: 450,  originalPrice: 800,  image: '/images/item6.jpg',  category: 'shorts',  badge: null,      sold: false, addedAt: 7  },
-  { id: 7,  name: 'Kids Outfit',      size: '10 years', price: 200,  originalPrice: 600,  image: '/images/item7.jpg',  category: 'sets',     badge: null,      sold: false, addedAt: 6  },
-  { id: 8,  name: 'Kids Outfit',      size: '3 years',  price: 200,  originalPrice: 550,  image: '/images/item8.jpg',  category: 'sets',     badge: null,      sold: false, addedAt: 5  },
-  { id: 9,  name: 'Silver Trouser',   size: '2 years',  price: 200,  originalPrice: 500,  image: '/images/item9.jpg',  category: 'trousers', badge: 'Deal',    sold: false, addedAt: 4  },
-  { id: 10, name: 'Clothing Set',     size: '2 years',  price: 300,  originalPrice: 700,  image: '/images/item10.jpg', category: 'sets',    badge: null,      sold: false, addedAt: 3  },
-  { id: 11, name: 'Clothing Set',     size: '4 years',  price: 300,  originalPrice: 650,  image: '/images/item11.jpg', category: 'sets',    badge: null,      sold: false, addedAt: 2  },
-  { id: 12, name: 'Kids Outfit',      size: '1 year',   price: 300,  originalPrice: 600,  image: '/images/item12.jpg', category: 'sets',    badge: null,      sold: false, addedAt: 1  },
+  { id: 4,  name: "Boy's Shorts",     size: '5 years',  price: 450,  originalPrice: null, image: '/images/item4.jpg',  category: 'shorts',   badge: null,   sold: false, addedAt: 9  },
+  { id: 5,  name: 'Kids Skirt',       size: '5 years',  price: 200,  originalPrice: null, image: '/images/item5.jpg',  category: 'skirts',   badge: null,   sold: false, addedAt: 8  },
+  { id: 6,  name: 'Denim Shorts',     size: '7–8 yrs',  price: 450,  originalPrice: null, image: '/images/item6.jpg',  category: 'shorts',   badge: null,   sold: false, addedAt: 7  },
+  { id: 7,  name: 'Kids Trousers',    size: '10 years', price: 200,  originalPrice: null, image: '/images/item7.jpg',  category: 'trousers', badge: null,   sold: false, addedAt: 6  },
+  { id: 8,  name: 'Kids Trousers',    size: '3 years',  price: 200,  originalPrice: null, image: '/images/item8.jpg',  category: 'trousers', badge: null,   sold: false, addedAt: 5  },
+  { id: 9,  name: 'Silver Trouser',   size: '2 years',  price: 200,  originalPrice: null, image: '/images/item9.jpg',  category: 'trousers', badge: 'Deal', sold: false, addedAt: 4  },
+  { id: 10, name: 'Clothing Set',     size: '2 years',  price: 300,  originalPrice: null, image: '/images/item10.jpg', category: 'sets',     badge: null,   sold: false, addedAt: 3  },
+  { id: 11, name: 'Clothing Set',     size: '4 years',  price: 300,  originalPrice: null, image: '/images/item11.jpg', category: 'sets',     badge: null,   sold: false, addedAt: 2  },
+  { id: 12, name: 'Kids Outfit',      size: '1 year',   price: 300,  originalPrice: null, image: '/images/item12.jpg', category: 'sets',     badge: null,   sold: false, addedAt: 1  },
   { id: 13, name: 'Floral Dress',     size: '5 years',  price: 300,  originalPrice: null, image: '/images/item13.jpg', category: 'dresses', badge: null,      sold: false, addedAt: 13 },
   { id: 14, name: 'Heart Print Dress',size: '2 years',  price: 300,  originalPrice: null, image: '/images/item14.jpg', category: 'dresses', badge: null,      sold: false, addedAt: 14 },
   { id: 15, name: 'Pink Flower Dress', size: '12 months', price: 300, originalPrice: null, image: '/images/item15.jpg', category: 'dresses', badge: null, sold: false, addedAt: 15 },

@@ -75,6 +75,38 @@
 .warm { background: var(--accent-lt); color: var(--accent-dk); }
 .teal { background: var(--teal-lt);   color: var(--teal);      }
 
+.btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.btnFill,
+.btnOutline {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-b);
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 12px 24px;
+  border-radius: 100px;
+  transition: transform 0.15s, background 0.18s, border-color 0.18s;
+}
+
+.btnFill {
+  background: #25D366;
+  color: #fff;
+}
+.btnFill:hover { background: #1db954; transform: translateY(-2px); }
+
+.btnOutline {
+  background: transparent;
+  color: var(--fg);
+  border: 2px solid var(--border);
+}
+.btnOutline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
 @media (max-width: 700px) {
   .section { padding: 48px 16px; }
   .grid { grid-template-columns: 1fr; gap: 32px; }

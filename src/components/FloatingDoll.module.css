@@ -1,0 +1,58 @@
+.wrap {
+  position: fixed;
+  z-index: 40;
+  pointer-events: none;
+  animation: floatDown linear infinite;
+}
+
+.svg {
+  height: auto;
+  filter: drop-shadow(0 6px 16px rgba(0,0,0,0.12));
+  animation: sway ease-in-out infinite alternate;
+}
+
+/* Each bear: different horizontal position, speed, delay, size */
+.bear1 {
+  left: 3%;
+  animation-duration: 14s;
+  animation-delay: 0s;
+}
+.bear1 .svg { width: 70px; animation-duration: 2.2s; }
+
+.bear2 {
+  left: 88%;
+  animation-duration: 10s;
+  animation-delay: -3s;
+}
+.bear2 .svg { width: 50px; animation-duration: 1.8s; }
+
+.bear3 {
+  left: 50%;
+  animation-duration: 18s;
+  animation-delay: -6s;
+}
+.bear3 .svg { width: 60px; animation-duration: 2.5s; }
+
+.bear4 {
+  left: 72%;
+  animation-duration: 12s;
+  animation-delay: -9s;
+}
+.bear4 .svg { width: 45px; animation-duration: 1.5s; }
+
+.bear5 {
+  left: 25%;
+  animation-duration: 16s;
+  animation-delay: -2s;
+}
+.bear5 .svg { width: 65px; animation-duration: 2s; }
+
+@keyframes floatDown {
+  0%   { top: -120px; }
+  100% { top: 110vh;  }
+}
+
+@keyframes sway {
+  from { transform: rotate(-8deg); }
+  to   { transform: rotate(8deg);  }
+}

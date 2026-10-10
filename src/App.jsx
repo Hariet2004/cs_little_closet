@@ -7,10 +7,12 @@ import HowToOrder from './components/HowToOrder'
 import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import FloatingDoll from './components/FloatingDoll'
 
 export default function App() {
   return (
     <>
+      <FloatingDoll />
       <Ticker />
       <Navbar />
       <main>
