@@ -1,33 +1,37 @@
 import styles from './Contact.module.css'
+import { useStore } from '../store/StoreContext'
 
 const IG = 'https://www.instagram.com/cs_little_closet/'
-const WA = 'https://wa.me/254796868984'
-
-const channels = [
-  {
-    icon: '📸',
-    title: 'Instagram',
-    desc: 'Browse latest drops and DM to order',
-    handle: '@cs_little_closet',
-    href: IG,
-  },
-  {
-    icon: '💬',
-    title: 'WhatsApp',
-    desc: 'Chat with us directly, fast replies',
-    handle: '+254 796 868984',
-    href: WA,
-  },
-  {
-    icon: '💳',
-    title: 'M-Pesa',
-    desc: 'Pay fast the Kenyan way',
-    handle: 'Details sent on order',
-    href: null,
-  },
-]
 
 export default function Contact() {
+  const { config } = useStore()
+  const WA = `https://wa.me/${config.waNumber}`
+  const waHandle = `+${config.waNumber.replace(/(\d{3})(\d{3})(\d{3,6})/, '$1 $2 $3')}`
+
+  const channels = [
+    {
+      icon: '📸',
+      title: 'Instagram',
+      desc: 'Browse latest drops and DM to order',
+      handle: '@cs_little_closet',
+      href: IG,
+    },
+    {
+      icon: '💬',
+      title: 'WhatsApp',
+      desc: 'Chat with us directly, fast replies',
+      handle: waHandle,
+      href: WA,
+    },
+    {
+      icon: '💳',
+      title: 'M-Pesa',
+      desc: 'Pay fast the Kenyan way',
+      handle: 'Details sent on order',
+      href: null,
+    },
+  ]
+
   return (
     <section className={styles.section} id="contact">
       <span className={styles.eyebrow}>Get In Touch</span>

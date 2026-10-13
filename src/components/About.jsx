@@ -1,7 +1,7 @@
 import styles from './About.module.css'
+import { useStore } from '../store/StoreContext'
 
 const IG = 'https://www.instagram.com/cs_little_closet/'
-const WA = 'https://wa.me/254796868984'
 
 const tags = [
   { label: 'Thrifted & Curated', warm: true  },
@@ -10,6 +10,9 @@ const tags = [
 ]
 
 export default function About() {
+  const { config } = useStore()
+  const WA = `https://wa.me/${config.waNumber}`
+
   return (
     <section className={styles.section} id="about">
       <div className={styles.grid}>

@@ -1,9 +1,12 @@
 import styles from './Footer.module.css'
+import { useStore } from '../store/StoreContext'
 
 const IG = 'https://www.instagram.com/cs_little_closet/'
-const WA = 'https://wa.me/254796868984'
 
 export default function Footer() {
+  const { config } = useStore()
+  const WA = `https://wa.me/${config.waNumber}`
+
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
@@ -18,6 +21,7 @@ export default function Footer() {
           <a href="#about">About</a>
           <a href={IG} target="_blank" rel="noopener noreferrer">Instagram</a>
           <a href={WA} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="#/admin">Admin</a>
         </nav>
 
         <div className={styles.right}>

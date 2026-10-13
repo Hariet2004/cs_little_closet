@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import ProductCard from './ProductCard'
-import { products, categories, sortOptions, sortProducts } from '../data/products'
+import { categories, sortOptions, sortProducts } from '../data/products'
+import { useStore } from '../store/StoreContext'
 import styles from './ProductGrid.module.css'
 
 export default function ProductGrid() {
+  const { products } = useStore()
   const [active, setActive] = useState('all')
   const [sort, setSort]   = useState('newest')
 

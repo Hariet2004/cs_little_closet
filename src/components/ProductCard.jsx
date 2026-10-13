@@ -1,19 +1,20 @@
 import styles from './ProductCard.module.css'
-import { WA_NUMBER } from '../data/products'
+import { useStore } from '../store/StoreContext'
 
-function waLink(name, size, price) {
+function waLink(waNumber, name, size, price) {
   const priceStr = price ? `KSh ${price.toLocaleString()}` : 'price TBD'
   const text = `Hi CS Little Closet! I'm interested in:\n*${name}* (Size: ${size}) - ${priceStr}\nIs it still available?`
-  return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`
+  return `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`
 }
 
 export default function ProductCard({ product }) {
+  const { config } = useStore()
   const { name, size, price, image, badge, category, sold } = product
 
   function handleWa(e) {
     e.preventDefault()
     e.stopPropagation()
-    if (!sold) window.open(waLink(name, size, price), '_blank', 'noopener,noreferrer')
+    if (!sold) window.open(waLink(config.waNumber, name, size, price), '_blank', 'noopener,noreferrer')
   }
 
   return (

@@ -29,7 +29,7 @@ export default function Testimonials() {
           {reviews.map((r, i) => (
             <div key={i} className={styles.card}>
               <div className={styles.stars}>★★★★★</div>
-              <p className={styles.quote}>"{r.quote}"</p>
+              <p className={styles.quote}>&ldquo;{r.quote}&rdquo;</p>
               <div className={styles.footer}>
                 <strong className={styles.name}>{r.name}</strong>
                 <span className={styles.purchased}>Purchased: {r.purchased}</span>

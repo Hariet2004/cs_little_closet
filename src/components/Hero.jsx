@@ -1,4 +1,5 @@
 import styles from './Hero.module.css'
+import { useStore } from '../store/StoreContext'
 
 const IG = 'https://www.instagram.com/cs_little_closet/'
 // left col: portrait then square | right col: square then portrait (Natasha stagger)
@@ -6,6 +7,12 @@ const heroLeft  = ['/images/item17.jpg', '/images/item29.jpg']
 const heroRight = ['/images/item14.jpg', '/images/item31.jpg']
 
 export default function Hero() {
+  const { products } = useStore()
+
+  const count = products.filter(p => !p.sold).length
+  const priced = products.filter(p => !p.sold && p.price !== null)
+  const lowest = priced.length ? Math.min(...priced.map(p => p.price)) : null
+
   return (
     <section className={styles.hero}>
       <div className={styles.inner}>
@@ -31,12 +38,12 @@ export default function Hero() {
 
           <div className={styles.trust}>
             <div className={styles.stat}>
-              <strong>38+</strong>
+              <strong>{count}+</strong>
               <span>Pieces Listed</span>
             </div>
             <div className={styles.divider} />
             <div className={styles.stat}>
-              <strong>KSh 200</strong>
+              <strong>{lowest !== null ? `KSh ${lowest}` : '—'}</strong>
               <span>Lowest Price</span>
             </div>
             <div className={styles.divider} />
