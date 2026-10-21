@@ -3,7 +3,7 @@ import styles from './HowToOrder.module.css'
 const steps = [
   { num: '01', title: 'Browse & Pick',   desc: 'Scroll our shop or check Instagram @cs_little_closet for the latest drops. Find something you love?' },
   { num: '02', title: 'DM or WhatsApp',  desc: 'Send us a message with the item name and size. We reply fast and reserve it for you.' },
-  { num: '03', title: 'Pay & Receive',   desc: 'Pay via M-Pesa once confirmed. Collect in Nairobi or we arrange delivery for a small fee.' },
+  { num: '03', title: 'Pay on Delivery',  desc: 'We bring your order to you in Nairobi and you pay when you receive it.' },
 ]
 
 export default function HowToOrder() {
