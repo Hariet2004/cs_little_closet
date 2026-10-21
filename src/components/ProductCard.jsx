@@ -7,7 +7,7 @@ function waLink(waNumber, name, size, price) {
   return `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`
 }
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, eager }) {
   const { config } = useStore()
   const { name, size, price, image, badge, category, sold } = product
 
@@ -22,7 +22,7 @@ export default function ProductCard({ product }) {
 
       {/* Image */}
       <div className={styles.imgWrap}>
-        <img src={image} alt={name} className={styles.img} loading="lazy" />
+        <img src={image} alt={name} className={styles.img} loading={eager ? 'eager' : 'lazy'} />
 
         {/* Hover overlay with sliding WA button */}
         {!sold && (

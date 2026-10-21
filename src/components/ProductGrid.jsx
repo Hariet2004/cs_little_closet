@@ -60,8 +60,8 @@ export default function ProductGrid() {
       </div>
 
       <div className={styles.grid}>
-        {display.map(product => (
-          <ProductCard key={product.id} product={product} />
+        {display.map((product, i) => (
+          <ProductCard key={product.id} product={product} eager={i < 6} />
         ))}
       </div>
     </section>
