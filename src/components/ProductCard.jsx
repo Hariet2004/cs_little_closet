@@ -22,7 +22,7 @@ export default function ProductCard({ product }) {
 
       {/* Image */}
       <div className={styles.imgWrap}>
-        <img src={image} alt={name} className={styles.img} />
+        <img src={image} alt={name} className={styles.img} loading="lazy" />
 
         {/* Hover overlay with sliding WA button */}
         {!sold && (
