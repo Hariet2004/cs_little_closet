@@ -21,7 +21,6 @@ export default function Footer() {
           <a href="#about">About</a>
           <a href={IG} target="_blank" rel="noopener noreferrer">Instagram</a>
           <a href={WA} target="_blank" rel="noopener noreferrer">WhatsApp</a>
-          <a href="#/admin">Admin</a>
         </nav>
 
         <div className={styles.right}>
